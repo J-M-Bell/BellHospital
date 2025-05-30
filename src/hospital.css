@@ -1,0 +1,75 @@
+/* CSS stylesheet for Hospital Website */
+
+#bannerarea {
+    background-color: white;
+}
+#bannerarea > img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding-right: 5px;
+}
+h1.header  {
+    text-align: left;
+    color:rgb(153, 189, 221);
+    padding-top: 30px;
+ }
+ul.header {
+    background-color: blue;
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    padding: 10px;
+    text-decoration: none;
+}
+ul.header li {
+    padding-left: 100px;   
+    font-size: 25pt;
+}
+ul.header li a {
+    color: white;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+	background-color: darkblue;
+} 
+
+body h1 {
+    color:rgb(153, 189, 221);
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+body img {
+    width: 250px;
+    height: 250px;
+}
+
+.bottom {
+    background-color: gray;
+    color: white;
+}
+
+
+fieldset {
+	background-color: rgb(153, 189, 221);
+	border: 2px outset gray;
+	border-radius: 10px;
+}
+
+legend {
+	background-color: white;
+	border: 2px outset gray;
+	padding: 0.2em;
+}
+
+.profile {
+    background-color: beige;
+}
