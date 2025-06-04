@@ -1,2 +1,2 @@
 # Bell Hospital
-Web App
+A hospital web application
