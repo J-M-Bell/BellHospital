@@ -1,0 +1,53 @@
+
+
+@startuml Hospital State Diagram
+
+'State Diagram
+hide empty description
+
+'States
+State "index.php" as index {
+    index : + index.js
+}
+State "news.php" as news
+State "staff.php" as staff
+State "treatments.php" as treatments
+State "signupemployee.php" as signupEmployee
+State "signuppatient.php" as signupPatient {
+    signupPatient : + signupPatient.js
+}
+State "loginemployee.php" as loginEmployee
+State "loginpatient.php" as loginPatient
+State "profileemployee.php" as profileEmployee
+State "profilepatient.php" as profilePatient
+State "webservice.php" as webService
+
+[*] --> index: start
+
+index --> news : Click News header link
+index --> staff : Click Staff header link
+index --> treatments : Click Treatments header link
+index --> loginEmployee : Click Log In (Employee) header link
+index --> loginPatient : Click Log In (Patient) header link
+index --> signupEmployee : Click Sign Up (Employee) header link
+index --> signupPatient : Click Sign Up (Patient) header link
+
+' staff --> webService
+' treatments --> webService
+loginEmployee --> webService : Save log in (Employee) info to server
+loginPatient --> webService : Save log in (Patient) info to server
+signupEmployee --> webService : Save sign up (Employee) info to server
+signupPatient --> webService : Save sign up (Patient) info to server
+
+' webService -> staff
+' webService --> treatments
+' webService --> loginEmployee
+' webService --> loginPatient
+' webService --> signupEmployee
+' webService --> signupPatient
+
+webService --> profileEmployee : Load Employee profile info from server
+webService --> profilePatient : Load Patient profile info from server
+
+
+@enduml

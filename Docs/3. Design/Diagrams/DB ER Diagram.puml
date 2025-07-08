@@ -1,0 +1,111 @@
+
+
+@startuml Hospital DB
+
+'groups two or more similar arrows together
+skinparam groupInheritance 2
+
+'Entities
+entity Hospital {
+    + Hospital_ID: int <<PK>>
+    + Hospital_District: varchar[50]
+}
+entity Doctors {
+    + Doctor_ID: int <<PK>>
+    + Speciality_Treatment_ID: int <<FK>>
+    + Username: varchar[20]
+    + Password: varchar[20]
+    + First_Name: varchar[50]
+    + Last_Name: varchar[50]
+    + Address_Line1: varchar[50]
+    + Address_Line2: varchar[50]
+    + City: varchar[50]
+    + State: varchar[2]
+    + Zip_Code: int
+    + Years_Of_Experience: int
+}
+entity Nurses {
+    + Nurse_ID: int <<PK>>
+    + Username: varchar[20]
+    + Password: varchar[20]
+    + First_Name: varchar[50]
+    + Last_Name: varchar[50]
+    + Address_Line1: varchar[50]
+    + Address_Line2: varchar[50]
+    + City: varchar[50]
+    + State: varchar[2]
+    + Zip_Code: int
+}
+entity Technicians {
+    + Technician_ID: int <<PK>>
+    + Username: varchar[20]
+    + Password: varchar[20]
+    + First_Name: varchar[50]
+    + Last_Name: varchar[50]
+    + Address_Line1: varchar[50]
+    + Address_Line2: varchar[50]
+    + City: varchar[50]
+    + State: varchar[2]
+    + Zip_Code: int
+}
+
+entity Administrators {
+    + Administrator_ID: int <<PK>>
+    + Username: varchar[20]
+    + Password: varchar[20]
+    + First_Name: varchar[50]
+    + Last_Name: varchar[50]
+    + Address_Line1: varchar[50]
+    + Address_Line2: varchar[50]
+    + City: varchar[50]
+    + State: varchar[2]
+    + Zip_Code: int
+}
+
+entity Patient {
+    + Patient_ID: int <<PK>>
+    + Patient_Username: varchar[20]
+    + Patient_Password: varchar[20]
+    + First_Name: varchar[50]
+    + Last_Name: varchar[50]
+    + Address_Line1: varchar[50]
+    + Address_Line2: varchar[50]
+    + City: varchar[50]
+    + State: varchar[2]
+    + Zip_Code: int
+    + Insurance_Povider: varchar[50] 
+    + First_Emergency_Contact_First_Name: varchar[50]
+    + First_Emergency_Contact_Last_Name: varchar[50]
+    + First_Emergency_Contact_Address_Line1: varchar[50]
+    + First_Emergency_Contact_Address_Line2: varchar[50]
+    + First_Emergency_Contact_City: varchar[50]
+    + First_Emergency_Contact_State: varchar[2]
+    + First_Emergency_Contact_Zip_Code: int
+    + Second_Emergency_Contact_First_Name: varchar[50]
+    + Second_Emergency_Contact_Last_Name: varchar[50]
+    + Second_Emergency_Contact_Address_Line1: varchar[50]
+    + Second_Emergency_Contact_Address_Line2: varchar[50]
+    + Second_Emergency_Contact_City: varchar[50]
+    + Second_Emergency_Contact_State: varchar[2]
+    + Second_Emergency_Contact_Zip_Code: int
+}
+entity Treatment {
+    + Treatment_ID: int <<PK>>
+    + TIN: int
+    + Treatment_Name: varchar[50]
+    + Treatment_Desc: varchar[MAX]
+}
+
+
+Doctors <--> "1" Treatment
+
+
+
+
+
+
+
+ 
+
+
+@enduml
